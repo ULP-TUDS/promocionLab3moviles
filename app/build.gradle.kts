@@ -37,6 +37,7 @@ dependencies {
     implementation ("com.github.bumptech.glide:glide:4.12.0")
     implementation(libs.retrofit)
     implementation(libs.converter.gson)
+    implementation(libs.lifecycle.viewmodel.android)
     annotationProcessor ("com.github.bumptech.glide:compiler:4.12.0")
     implementation(libs.material)
     implementation(libs.activity)

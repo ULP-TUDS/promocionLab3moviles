@@ -66,7 +66,9 @@ public class Apicliente {
     }
 
     public interface MisEndPoints {
-        
+        @FormUrlEncoded
+        @POST("api/Usuario/login")
+        Call<String> login(@Field("Usuario") String u, @Field("Clave") String c,@Field("Rol") int r);
 
 
     }
