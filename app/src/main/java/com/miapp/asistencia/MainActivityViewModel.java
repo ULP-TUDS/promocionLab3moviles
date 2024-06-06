@@ -22,24 +22,12 @@ public class MainActivityViewModel extends AndroidViewModel {
     }
 
     public void logueo(String usuario, String clave,String rol) {
-        int rolId=0;
+
         Apicliente.init(getApplication());
 
         Apicliente.MisEndPoints api = Apicliente.getEndPoints();
-            if (rol.equals("Administrador")) {
-                rolId=1;
-                Toast.makeText(getApplication(), "1", Toast.LENGTH_SHORT).show();
 
-            }
-        if(rol.equals("Empleado")) {
-            rolId=2;
-            Toast.makeText(getApplication(), "2", Toast.LENGTH_SHORT).show();
-        }
-        if(rol.equals("Director")){
-            rolId=3;
-            Toast.makeText(getApplication(), "3", Toast.LENGTH_SHORT).show();
-        }
-        Call<String> call = api.login(usuario, clave,rolId);
+        Call<String> call = api.login(usuario, clave,rol);
         call.enqueue(new Callback<String>() {
             @Override
             public void onResponse(Call<String> call, Response<String> response) {

@@ -1,14 +1,14 @@
-package com.miapp.asistencia.ui.home;
+package com.miapp.asistencia.ui.asistencia;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-public class HomeViewModel extends ViewModel {
+public class AsistenciaViewModel extends ViewModel {
 
     private final MutableLiveData<String> mText;
 
-    public HomeViewModel() {
+    public AsistenciaViewModel() {
         mText = new MutableLiveData<>();
         mText.setValue("This is home fragment");
     }
