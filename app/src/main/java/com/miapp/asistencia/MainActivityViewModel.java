@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.lifecycle.AndroidViewModel;
 
 
 import com.miapp.asistencia.request.Apicliente;
@@ -25,14 +26,18 @@ public class MainActivityViewModel extends AndroidViewModel {
         Apicliente.init(getApplication());
 
         Apicliente.MisEndPoints api = Apicliente.getEndPoints();
-        if (rol=="Administrador"){
-            rolId=1;
-        }
-        if(rol=="Empleado"){
+            if (rol.equals("Administrador")) {
+                rolId=1;
+                Toast.makeText(getApplication(), "1", Toast.LENGTH_SHORT).show();
+
+            }
+        if(rol.equals("Empleado")) {
             rolId=2;
+            Toast.makeText(getApplication(), "2", Toast.LENGTH_SHORT).show();
         }
-        else{
+        if(rol.equals("Director")){
             rolId=3;
+            Toast.makeText(getApplication(), "3", Toast.LENGTH_SHORT).show();
         }
         Call<String> call = api.login(usuario, clave,rolId);
         call.enqueue(new Callback<String>() {
